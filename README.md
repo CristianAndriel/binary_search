@@ -1,5 +1,4 @@
-# 🔍 Pesquisa Binária em Python — Projeto de Estudo
-
+# 🔍 Pesquisa Binária em Python
 Este projeto implementa o algoritmo de **Pesquisa Binária** (Binary Search) em Python.  
 Ele foi desenvolvido como parte dos meus estudos de algoritmos, seguindo o conteúdo do livro **"Entendendo Algoritmos"**, de Aditya Bhargava.
 
