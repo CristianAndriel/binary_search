@@ -1,29 +1,30 @@
 from typing import List
 
-def binary_search(sorted_list: List[int], target: int) -> int:
-    start = 0
-    end = len(sorted_list) - 1
+def pesquisa_binaria(lista, item):
+    baixo = 0
+    alto = len(lista) - 1
 
-    while start <= end:
-        mid = (start + end) // 2
-        guess = sorted_list[mid]
+    ## baixo e alto acompanham a parte da lista que você está procurando
 
-        if guess == target:
-            return mid
-        elif guess < target:
-            start = mid + 1
+    ## Enquanto ainda não achou o item, continua procurando
+    while baixo <= alto:
+        meio = (baixo + alto) / 2
+        chute = lista[meio]
+
+        ## Se o chute for o item, você encontrou o item
+        if chute == item:
+            return meio
+        ## Se o chute for maior que o item, você precisa procurar na parte inferior da lista
+        if chute > item:
+            alto = meio -1
+        ## Se o chute for menor que o item, você precisa procurar na parte superior da lista
         else:
-            end = mid - 1
+            baixo = meio + 1
+    return None 
+    ## Se não achou o item, retorna None
 
-    return -1  # Fica fora do while
 
-if __name__ == "__main__":
-    numbers = [1, 3, 5, 7, 9, 11, 13]
-    target_number = 9
-
-    result = binary_search(numbers, target_number)
-
-    if result != -1:
-        print(f"Elemento {target_number} encontrado no índice {result}.")
-    else:
-        print(f"Elemento {target_number} não encontrado.")
+# Testando a função
+    minha_lista = [1, 3, 5, 7, 9]
+    print(pesquisa_binaria(minha_lista, 3)) # => 1
+    print(pesquisa_binaria(minha_lista, -1)) # => None
